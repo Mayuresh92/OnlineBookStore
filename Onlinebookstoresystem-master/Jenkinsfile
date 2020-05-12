@@ -50,13 +50,13 @@ pipeline{
                                                             }
                                                             else
                                                             {
-                                                                mail bcc: '', body: '''Build success as unit test cases passing criteria got matched''',
-                                                                cc: '', from: '', replyTo: '', subject: 'Jenkins job', to: 'marathemayuresh92@gmail.com'
+                                                                emailext attachLog: true, body: 'Unit test cases passing percentage criteria matched', recipientProviders: [developers()], subject: 'Build success', to: 'marathemayuresh92@gmail.com'                
+                                                                
                                                             }
                        
                                                         }catch(err){
                                                                         echo err.getMessage()
-                                                                        emailext attachLog: true, body: 'Unit test cases passing percentage criteria matched', recipientProviders: [developers()], subject: 'Build success', to: 'marathemayuresh92@gmail.com'                
+                                                                        emailext attachLog: true, body: 'Unit test cases passing percentage criteria not matched', recipientProviders: [developers()], subject: 'Build success', to: 'marathemayuresh92@gmail.com'                
                                                         }
                        
                                                     }
