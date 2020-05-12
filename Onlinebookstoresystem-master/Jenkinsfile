@@ -56,8 +56,7 @@ pipeline{
                        
                                                         }catch(err){
                                                                         echo err.getMessage()
-                                                                        mail bcc: '', body: '''Welcome to jenkins email alert, Unit test cases passing criteria not matching with required one''',
-                                                                        cc: '', from: '', replyTo: '', subject: 'About latest Jenkins job', to: 'marathemayuresh92@gmail.com'
+                                                                        emailext attachLog: true, body: 'Unit test cases passing percentage criteria matched', recipientProviders: [developers()], subject: 'Build success', to: 'marathemayuresh92@gmail.com'                
                                                         }
                        
                                                     }
