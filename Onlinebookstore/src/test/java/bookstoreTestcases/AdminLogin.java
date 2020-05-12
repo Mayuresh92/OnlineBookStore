@@ -24,7 +24,7 @@ public class AdminLogin {
 		
 		driver.findElement(By.name("password")).sendKeys("admin");
 		
-		driver.findElement(By.xpath("//input[@value=' LOGIN AS ADMIN1 ']")).click();
+		driver.findElement(By.xpath("//input[@value=' LOGIN AS ADMIN ']")).click();
 		
 		driver.quit();
 	}
