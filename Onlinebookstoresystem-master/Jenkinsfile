@@ -29,9 +29,9 @@ pipeline{
                     
                     steps{
                             script {        
-                                        withSonarQubeEnv('Sonar'){   
+                                        withSonarQubeEnv(credentialsId:'0f8e7bb5db99ddc743314a3fccdba02b85e58c0e', installationName:'Sonar'){   
                         
-                                        bat 'mvn -f Onlinebookstore/pom.xml sonar:sonar'
+                                        bat 'mvn -f Onlinebookstore/pom.xml org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
                      
                                     }
                             }
