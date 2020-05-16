@@ -31,7 +31,7 @@ pipeline{
                             script {        
                                         withSonarQubeEnv('Sonar'){   
                         
-                                        bat 'mvn -f Onlinebookstore/pom.xml sonar:sonar'
+                                        bat 'mvn -f Onlinebookstore/pom.xml clean sonar:sonar'
                      
                                     }
                             }
